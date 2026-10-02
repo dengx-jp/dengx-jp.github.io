@@ -1,0 +1,9 @@
+:HL["/webflow/css/dengx-024cd5.webflow.shared.46bb28224.min-33d825.css","style"]
+:HL["/cms/site.css","style"]
+:HL["https://fonts.googleapis.com/css?family=Lato%3A100%2C100italic%2C300%2C300italic%2C400%2C400italic%2C700%2C700italic%2C900%2C900italic|Oswald%3A200%2C300%2C400%2C500%2C600%2C700|Open%20Sans%3A300%2C300italic%2C400%2C400italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic|Heebo%3A300%2C400%2C500%2C600%2C700|Montserrat%20Alternates%3A300%2C400%2C500%2C600%2C700|Sora%3A300%2C400%2C500%2C600%2C700|Syne%3A300%2C400%2C500%2C600%2C700&display=swap","style"]
+:HL["https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap","style"]
+:HL["/ed/ed.css","style"]
+:HL["/ed/logo-dark.svg","image"]
+:HL["/ed/logo-light.svg","image"]
+:HL["/media/ed-camera.jpg","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"slug","param":{"type":"d","key":"iot-solution","siblings":["blog-categories","blog-posts","news","post","posts-categories","search","search-index.json"]},"prefetchHints":4160,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"PFcJbJYnMqebYQiQikzsO"}

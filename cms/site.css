@@ -1,0 +1,224 @@
+/* CMS 追加分の最小限スタイル（Webflow の共有CSSの上に重ねる） */
+
+/* セクション用ラッパーはレイアウトに影響させない */
+.cms-contents { display: contents; }
+
+/* カード一覧: 列数 */
+.team-grid-3.cms-grid-2 { grid-template-columns: 1fr 1fr; }
+.team-grid-3.cms-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+.team-grid-3.cms-grid-4 { grid-template-columns: repeat(4, 1fr); }
+@media screen and (max-width: 991px) {
+  .team-grid-3.cms-grid-3, .team-grid-3.cms-grid-4 { grid-template-columns: 1fr 1fr; }
+}
+@media screen and (max-width: 479px) {
+  .team-grid-3.cms-grid-2, .team-grid-3.cms-grid-3, .team-grid-3.cms-grid-4 { grid-template-columns: 1fr; }
+}
+.team-card-2.cms-card { justify-content: flex-start; }
+.cms-card-img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; margin-bottom: 18px; }
+.cms-hero-img { width: 100%; max-width: 740px; aspect-ratio: 4 / 3; object-fit: cover; }
+
+/* 自由記述セクション */
+.cms-richtext-section { padding: 80px 0; }
+.cms-richtext-heading { margin-bottom: 32px; }
+.cms-richtext { max-width: 860px; margin: 0 auto; }
+.w-richtext figure img { max-width: 100%; height: auto; }
+
+/* YouTube 埋め込み（16:9） */
+.cms-embed { margin: 24px 0; }
+.cms-embed-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; }
+.cms-embed-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.cms-embed figcaption { font-size: 13px; opacity: .7; margin-top: 8px; }
+
+/* サイト内検索 */
+.cms-search { padding: 180px 0 120px; min-height: 60vh; }
+.cms-search-form { display: flex; gap: 12px; margin: 24px 0 40px; flex-wrap: wrap; }
+.cms-search-form input[type="search"] { flex: 1 1 260px; min-width: 0; }
+.cms-search-result { display: block; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.15); color: inherit; text-decoration: none; }
+.cms-search-result:hover .cms-search-title { text-decoration: underline; }
+.cms-search-meta { font-size: 12px; opacity: .6; margin-bottom: 6px; letter-spacing: .05em; }
+.cms-search-title { font-size: 18px; margin: 0 0 6px; }
+.cms-search-snippet { font-size: 14px; opacity: .8; margin: 0; }
+.cms-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; }
+.cms-tag { display: inline-block; padding: 4px 12px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; font-size: 12px; color: inherit; text-decoration: none; }
+.cms-tag:hover { border-color: #f9324a; color: #f9324a; }
+
+/* フォーム: 送信ボタン無効化中 */
+.w-form form [type="submit"][disabled] { opacity: .6; cursor: wait; }
+/* ボット対策用の入力欄（人には見えない） */
+.cms-hp { position: absolute !important; left: -10000px !important; width: 1px; height: 1px; overflow: hidden; }
+
+/* ヒーロー画像: 図・イラストは全体表示 */
+.cms-hero-img--contain { object-fit: contain; background: #fff; padding: 12px; border-radius: 8px; }
+
+/* 自由記述セクション内の図 */
+.cms-richtext figure { margin: 28px 0; }
+.cms-richtext figure img { display: block; width: 100%; height: auto; border-radius: 8px; background: #fff; }
+.cms-richtext ol, .cms-richtext ul { padding-left: 1.4em; }
+.cms-richtext li { margin-bottom: 8px; }
+
+/* 仕様表 */
+.cms-spec__body { display: grid; gap: 40px; align-items: start; }
+.cms-spec__body--with-image { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+@media screen and (max-width: 991px) { .cms-spec__body--with-image { grid-template-columns: 1fr; } }
+.cms-spec__figure { margin: 0; }
+.cms-spec__figure img { display: block; width: 100%; height: auto; background: #fff; border-radius: 8px; padding: 16px; box-sizing: border-box; }
+.cms-spec__figure figcaption { font-size: 12px; opacity: .7; margin-top: 8px; text-align: center; }
+.cms-spec__table-wrap { overflow-x: auto; }
+.cms-spec__table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.7; }
+.cms-spec__table th, .cms-spec__table td { border-bottom: 1px solid rgba(255,255,255,.18); padding: 14px 12px; text-align: left; vertical-align: top; }
+.cms-spec__table thead th { font-size: 12px; letter-spacing: .08em; opacity: .7; font-weight: 600; border-bottom-color: rgba(255,255,255,.4); }
+.cms-spec__table tbody th { white-space: nowrap; font-weight: 600; width: 22%; }
+.cms-spec__table tbody td:last-child { font-size: 12px; opacity: .75; width: 26%; }
+.cms-spec__footnote { font-size: 12px; opacity: .7; margin-top: 12px; }
+
+/* お問い合わせ誘導: ボタン2つ */
+.cms-cta-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+.cms-cta-download { background-color: transparent !important; border: 1px solid currentColor !important; }
+
+/* 自由記述セクション: 図は本文幅いっぱい・箇条書きの記号を表示 */
+.cms-richtext figure { display: block; width: 100% !important; max-width: 100% !important; }
+.cms-richtext ul { list-style: disc; }
+.cms-richtext ol { list-style: decimal; }
+/* お問い合わせ誘導（黄色背景）の資料ボタンは濃色で読みやすく */
+.cms-cta-download { color: #111 !important; border-color: #111 !important; }
+.cms-cta-download:hover { background-color: #111 !important; color: #fff !important; }
+
+/* ═══ CMS版ヒーロー（.cms-hero）: 長い製品名でも読みやすいレイアウト ═══
+   Webflow の骨格は維持しつつ、画像は左、文字は右に分離。高さは内容に合わせて伸びる */
+.banner-5-hero-section.cms-hero { height: auto; min-height: 680px; padding-top: 170px; padding-bottom: 90px; }
+.cms-hero .banner-3-wrap { width: 57%; margin-left: auto; margin-right: 0; padding-left: 24px; text-align: left; align-items: flex-start; }
+.cms-hero .about-us-3 { margin-top: 0; text-align: left; align-items: flex-start; row-gap: 14px; }
+.cms-hero .about-2-title-wrapper { width: 100%; }
+.cms-hero .left-video-con { width: 42%; }
+.cms-hero .ov-about-3 { background: linear-gradient(to right, rgba(0,0,0,0) 60%, #000 100%), linear-gradient(#00000055, #0000 40%); }
+.cms-hero .cms-hero-img { width: 100%; height: 100%; max-width: none; aspect-ratio: auto; object-fit: cover; display: block; }
+.cms-hero .cms-hero-img--contain { object-fit: contain; background: #fff; padding: 12px; border-radius: 0; }
+
+/* 小見出し（事業名）: 赤いバー付きラベル */
+.cms-hero-eyebrow { display: flex; align-items: center; gap: 12px; width: auto; margin: 0 0 14px !important; color: #f9324a; font-size: 13px; font-weight: 700; letter-spacing: .14em; text-align: left; }
+.cms-hero-eyebrow::before { content: ''; width: 28px; height: 2px; background: #f9324a; flex: none; }
+
+/* 見出し: 語の途中・括弧の中では折り返さない。改行は編集画面の指定どおり */
+.cms-hero-title { font-size: clamp(28px, 2.3vw, 33px); line-height: 1.32; text-align: left; letter-spacing: 0; word-break: keep-all; overflow-wrap: anywhere; }
+.cms-hero-word { white-space: nowrap; }
+
+/* リード文 */
+.cms-hero-lead { max-width: 580px; margin-top: 22px; font-size: 15px; line-height: 1.9; }
+.cms-hero-lead p { margin-bottom: 10px; }
+.cms-hero-lead strong { font-size: 16px; }
+
+/* 要点バッジ */
+/* Webflow の全体 ul スタイル（縦並び・文字を透過するグラデーション効果）を打ち消す */
+.cms-hero-badges { list-style: none; display: flex; flex-direction: row; flex-wrap: wrap; gap: 8px; margin: 22px 0 0; padding: 0; background: none; color: #fff; -webkit-text-fill-color: #fff; background-clip: border-box; }
+.cms-hero-badges li { display: block; width: auto; margin: 0; }
+.cms-hero-badges li { padding: 6px 14px; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; font-size: 12px; letter-spacing: .04em; white-space: nowrap; }
+
+/* タブレット・スマホ: 画像を上、文字を下に縦積み */
+@media screen and (max-width: 991px) {
+  .banner-5-hero-section.cms-hero { flex-direction: column-reverse; align-items: stretch; min-height: 0; padding-top: 90px; padding-bottom: 56px; }
+  .cms-hero .left-video-con { position: relative; inset: auto; width: 100%; height: 300px; border-radius: 0; margin-bottom: 32px; }
+  .cms-hero .ov-about-3 { background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,0) 40%, #000 100%); }
+  .cms-hero .banner-3-wrap { width: 100%; padding-left: 0; text-align: left; align-items: flex-start; }
+  .cms-hero-title { font-size: clamp(24px, 4.2vw, 34px); }
+}
+@media screen and (max-width: 479px) {
+  .cms-hero .left-video-con { height: 220px; margin-bottom: 24px; }
+  .cms-hero-title { font-size: clamp(22px, 6.3vw, 28px); }
+  .cms-hero-lead { font-size: 14px; }
+  .cms-hero-badges li { white-space: normal; }
+}
+
+/* ═══ スマホ: フッター見出しの固定幅（200px×2列）が画面幅を超え、ページ全体が横にはみ出す不具合の修正 ═══ */
+@media screen and (max-width: 479px) {
+  .footer-list .nav-footer-item { width: auto; max-width: 100%; }
+  .footer-navigation, .top-footer-grid { max-width: 100%; }
+}
+
+/* ═══ スマホ・タブレットのメニュー（ハンバーガー） ═══
+   元デザインは幅320pxの左ドロワーで、閉じる「×」に絵がなく、背面のページがそのまま見えていた。
+   - 開いている間は背面を暗くし、境目を分かりやすく（暗い部分をタップで閉じる）
+   - 閉じる「×」を表示
+   - スマホ（〜767px）では画面幅いっぱいのメニューにする */
+@media screen and (max-width: 991px) {
+  .w-nav-overlay { background: rgba(0, 0, 0, 0.6); }
+  .close-menu-button-3.w--open { width: 44px; height: 44px; padding: 0; top: 14px; right: 14px; cursor: pointer; }
+  .close-menu-button-3.w--open::before,
+  .close-menu-button-3.w--open::after { content: ''; position: absolute; left: 11px; top: 21px; width: 22px; height: 2px; background: #fff; border-radius: 1px; }
+  .close-menu-button-3.w--open::before { transform: rotate(45deg); }
+  .close-menu-button-3.w--open::after { transform: rotate(-45deg); }
+  .dropdown-menu-2 { padding-right: 15px; }
+}
+@media screen and (max-width: 767px) {
+  .nav-menu-shadow-overlay-3 { width: 100vw; max-width: 100%; box-shadow: none; }
+  .dropdown-menu-2 { min-height: 100vh; padding-bottom: 120px; }
+}
+
+/* スマホ・タブレットのメニュー: BUSINESSES のサブメニューが固定高さ（35px/50px）の枠からはみ出して
+   下の BLOG に重なっていた不具合。開いた分だけ下に押し下げる */
+@media screen and (max-width: 991px) {
+  .div-block-63, .nav-menu-dropdown-white { height: auto; }
+  .nav-menu-dropdown-white .dropdown-nav-list.w--open { position: static; }
+}
+
+/* スマホ: お問い合わせページ「Access」の地図画像（固定幅）が画面幅を超えて横スクロールが出る不具合の修正 */
+@media screen and (max-width: 479px) {
+  .hero-split-7 { max-width: 100%; }
+  .hero-split-7 .shadow-two-5, .shadow-two-5 { max-width: 100%; height: auto; }
+}
+
+/* 白背景の自由記述セクション（プライバシーポリシーページと同じ見え方） */
+.cms-richtext-section--white { color: #111; }
+.cms-richtext-section--white .cms-richtext-heading { text-align: center; margin: 0 0 28px; font-size: 20px; color: #111; }
+.cms-richtext--white { max-width: 860px; margin: 0 auto; color: #222; font-size: 13px; line-height: 1.9; }
+.cms-richtext--white h3 { font-size: 15px; font-weight: 700; margin: 28px 0 8px; color: #111; }
+.cms-richtext--white p { margin: 0 0 12px; }
+.cms-richtext--white a { color: #c4001d; text-decoration: underline; }
+.cms-richtext--white ul, .cms-richtext--white ol { margin: 0 0 12px; padding-left: 1.6em; }
+.cms-richtext--white li { margin-bottom: 6px; }
+.cms-richtext--white li::marker { color: #111; }
+.cms-richtext-section--white + .cms-richtext-section--white { padding-top: 0; }
+@media screen and (max-width: 479px) { .cms-richtext--white { font-size: 12px; } .cms-richtext-section--white .cms-richtext-heading { font-size: 18px; } }
+
+/* 検証環境の帯（本番には出ない） */
+.cms-staging-ribbon { position: fixed; left: 0; right: 0; bottom: 0; z-index: 99999; padding: 8px 14px; background: #f5b400; color: #111; font-size: 12px; font-weight: 700; text-align: center; letter-spacing: .04em; box-shadow: 0 -2px 10px rgba(0,0,0,.25); }
+
+/* カード一覧: 外枠（logos-title-large）と内枠（team-circles-3）の両方に線があり二重線になるため、外枠の線を消す */
+.cms-cardgrid.logos-title-large { border-bottom: none; }
+
+/* 白背景の本文: Webflow の記事本文用クラス（rich-blog-post-text）が段落を白〜薄灰色にするため、要素ごとに濃い色を指定 */
+.cms-richtext--white,
+.cms-richtext--white p, .cms-richtext--white li, .cms-richtext--white span,
+.cms-richtext--white h3, .cms-richtext--white h4, .cms-richtext--white strong { color: #222 !important; opacity: 1 !important; }
+.cms-richtext--white h3, .cms-richtext--white strong { color: #111 !important; }
+.cms-richtext--white a { color: #c4001d !important; }
+
+/* フッター: ロゴの下のポリシー系リンク（プライバシーポリシー／情報セキュリティ） */
+.cms-footer-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 44px; }
+.cms-footer-logo { width: 156px; height: auto; max-height: none; display: block; }
+.cms-footer-policy { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; background: none; color: inherit; -webkit-text-fill-color: initial; background-clip: border-box; }
+.cms-footer-policy li { display: block; margin: 0; padding: 0; width: auto; }
+.cms-footer-policy a { color: var(--gray, #9a9a9a); font-size: 12px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; text-decoration: none; transition: color .15s ease; }
+.cms-footer-policy a:hover, .cms-footer-policy a[aria-current="page"] { color: #fff; }
+@media screen and (max-width: 479px) {
+  .cms-footer-brand { align-items: flex-start; gap: 32px; }
+  .cms-footer-policy { align-items: flex-start; }
+}
+
+/* 本文の箇条書き: Webflow の全体 ul スタイル（文字を透過してグラデーションにする効果）で文字が見えなくなるため打ち消す */
+.cms-richtext ul, .cms-richtext ol, .cms-richtext li {
+  background: none !important; background-clip: border-box !important; -webkit-text-fill-color: currentColor !important;
+  flex-direction: column; row-gap: 0;
+}
+.cms-richtext--white ul, .cms-richtext--white ol, .cms-richtext--white li { color: #222 !important; -webkit-text-fill-color: #222 !important; }
+
+/* プレビュー中の帯（ログイン中の本人だけに表示。検証環境の帯がある場合はその上に重ねる） */
+.cms-preview-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 100000; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 20px; padding: 8px 14px; background: #f9324a; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .04em; box-shadow: 0 -2px 10px rgba(0,0,0,.3); }
+.cms-preview-bar__actions { display: inline-flex; gap: 14px; }
+.cms-preview-bar a { color: #fff; text-decoration: underline; }
+.cms-staging-ribbon + .cms-preview-bar, .cms-preview-bar ~ .cms-staging-ribbon { bottom: 34px; }
+
+/* 電力事業ページ（/dian-li-shi-ye）: 製品セクションの見出し。長い製品名が1文字だけ折り返して崩れないよう、
+   サイズを固定し本文と同じ左寄せにする（このセクション構成はこのページでのみ使用） */
+.hero-heading-center-3 .hero-split-8 .centered-heading-6 { text-align: left; font-size: 36px; line-height: 1.3; }
+@media screen and (max-width: 991px) { .hero-heading-center-3 .hero-split-8 .centered-heading-6 { font-size: 32px; } }
+@media screen and (max-width: 479px) { .hero-heading-center-3 .hero-split-8 .centered-heading-6 { font-size: 30px; } }
